@@ -2,7 +2,7 @@ package org.example.carreradecaballosm03uf5.model;
 
 import java.util.HashMap;
 import java.util.Map;
-
+//comentario
 public class Tablero {
 
     private Map<String, Integer> posicicionDeLosCaballos; // Almacena las posiciones de los caballos
