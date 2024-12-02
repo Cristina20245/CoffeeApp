@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="632.0" prefWidth="957.0" spacing="20.0" stylesheets="@apuestas.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.carreradecaballosm03uf5.ApuestasController">
+    <children>
+        <!-- StackPane para fondo y contenido -->
+        <StackPane prefHeight="627.0" prefWidth="901.0">
+            <!-- Imagen de fondo -->
+            <ImageView fitHeight="627.0" fitWidth="897.0" preserveRatio="true">
+                <image>
+                    <Image url="@3background.jpg" />
+                </image>
+            </ImageView>
+
+            <!-- Panel con contenido de apuestas -->
+            <Pane prefHeight="627.0" prefWidth="897.0" stylesheets="@apuestas.css">
+                <children>
+                    <Label fx:id="titleLabel" layoutX="229.0" layoutY="61.0" styleClass="label-titulo" text="Resultados de las Apuestas" textFill="WHITE">
+                        <font>
+                            <Font name="System Bold" size="24.0" />
+                        </font>
+                    </Label>
+
+                    <!-- Nuevo Label para mostrar texto relacionado con apuestas -->
+                    <Label fx:id="apuestasLabel" layoutX="187.0" layoutY="220.0" text="Texto de apuestas" textFill="WHITE">
+                        <font>
+                            <Font name="System Bold" size="22.0" />
+                        </font>
+                    </Label>
+
+                    <!-- Botón para avanzar a los resultados -->
+                    <Button layoutX="381.0" layoutY="479.0" onAction="#onContinuarButtonClick" prefHeight="40.0" prefWidth="154.0" text="Continuar" />
+                </children>
+            </Pane>
+        </StackPane>
+    </children>
+
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+</VBox>

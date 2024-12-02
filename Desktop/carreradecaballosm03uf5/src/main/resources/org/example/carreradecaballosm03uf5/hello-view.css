@@ -1,0 +1,36 @@
+.root {
+
+     -fx-background-size: 100% 100%;
+     -fx-background-repeat: no-repeat;
+     -fx-background-color: #000000; /* Oscurece con negro semitransparente*/
+     -fx-background-blend-mode: overlay;  /*Mezcla el color con la imagen*/
+    }
+
+.welcomeText {
+     -fx-font-family: "Racing Sans One", "Arial", sans-serif;
+        -fx-font-size: 40px;
+        -fx-fill: linear-gradient(from 0% 0% to 100% 100%, gold, orange);
+        -fx-effect: dropshadow(gaussian, black, 10, 0.8, 3, 3); /* Sombra negra */
+        -fx-text-alignment: center;
+    }
+
+/* Estilo base para los botones */
+.button {
+ -fx-font-family: "Arial", sans-serif;
+             -fx-font-size: 20px;
+             -fx-font-weight: bold;
+             -fx-background-color: rgba(0, 0, 0, 0.7); /* Fondo negro semitransparente para un efecto suave */
+             -fx-text-fill: white; /* Texto blanco */
+             -fx-border-color: rgba(255, 255, 255, 0.6); /* Borde blanco con opacidad */
+             -fx-border-width: 2px;
+             -fx-border-radius: 10px;
+             -fx-padding: 10px 20px;
+             -fx-cursor: hand; /* Cambiar el cursor al pasar */
+         }
+
+/* Efecto hover (cuando el ratón está sobre el botón) */
+.button:hover {
+    -fx-background-color: gold; /* Fondo dorado al pasar el ratón */
+    -fx-text-fill: black; /* Cambia el texto a negro */
+    -fx-border-color: gold; /* Cambia el borde a dorado */
+}
