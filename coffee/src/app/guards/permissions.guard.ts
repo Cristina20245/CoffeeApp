@@ -12,6 +12,6 @@ export const permissionsGuard: CanActivateFn = (route, state) => {
 
   // Esta es la función que simula la verificación de permisos
   function isBarista(): boolean {
-    return true; // Aquí puedes cambiar la lógica para que verifique si el usuario tiene el rol 'barista'
+    return false; // Aquí puedes cambiar la lógica para que verifique si el usuario tiene el rol 'barista'
   }
 };

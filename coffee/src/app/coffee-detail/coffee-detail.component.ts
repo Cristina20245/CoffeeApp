@@ -32,7 +32,7 @@ export class CoffeeDetailComponent implements OnInit {
 
   // Método para añadir el café al pedido
   addToOrder(): void {
-    this.coffeeService.addToOrder(this.coffee);
+    this.coffeeService.addOrder(this.coffee);
     alert(`${this.coffee.title} añadido al pedido.`);
   }
 }

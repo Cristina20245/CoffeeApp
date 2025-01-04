@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class CoffeeService {
   private apiUrl = 'https://api.sampleapis.com/coffee/hot'; // URL de la API
   private localStorageKey = 'localCoffees'; // Clave para almacenar cafés locales en localStorage
+  private ordersKey = 'orders'; // Clave para almacenar pedidos en localStorage
   private orders: any[] = []; // Lista de pedidos (en memoria)
   private localCoffees: string[] = []; // Lista para almacenar cafés locales (títulos)
 
@@ -19,13 +20,13 @@ export class CoffeeService {
     }
 
     // Cargar los pedidos desde localStorage (si existen)
-    const savedOrders = localStorage.getItem('orders');
+    const savedOrders = localStorage.getItem(this.ordersKey);
     if (savedOrders) {
       this.orders = JSON.parse(savedOrders);
     }
   }
 
-  // Método para obtener la lista de cafés locales desde localStorage
+  // Método para obtener los cafés locales desde localStorage
   getLocalCoffees(): string[] {
     return this.localCoffees; // Devuelve los cafés locales
   }
@@ -46,15 +47,15 @@ export class CoffeeService {
     return this.http.get<any>(`${this.apiUrl}/${id}`); // Método para obtener un café específico por ID
   }
 
-  // Método para añadir un café al pedido
-  addToOrder(coffee: any): void {
-    this.orders.push(coffee);
-    this.updateLocalStorage('orders', this.orders); // Actualiza los pedidos en localStorage
+  // Método para añadir un pedido (nuevo) a la lista de pedidos
+  addOrder(order: any): void {
+    this.orders.push(order); // Añadir el pedido a la lista de pedidos
+    this.updateLocalStorage(this.ordersKey, this.orders); // Guarda la lista de pedidos en localStorage
   }
 
   // Obtener todos los pedidos
   getOrders(): any[] {
-    return this.orders;
+    return this.orders; // Retorna los pedidos actuales
   }
 
   // Método privado para actualizar localStorage
@@ -62,7 +63,6 @@ export class CoffeeService {
     localStorage.setItem(key, JSON.stringify(data)); // Guarda los datos en localStorage
   }
 }
-
 
 
 /*import { Injectable } from '@angular/core';

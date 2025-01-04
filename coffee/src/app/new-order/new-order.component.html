@@ -1,4 +1,23 @@
+<div>
+    <h2>Add a new order</h2>
+    <form (ngSubmit)="addOrder()">
+      <label for="order-details">Order Details:</label>
+      <textarea id="order-details" name="order-details" [(ngModel)]="newOrderDetails"></textarea>
+  
+      <button type="submit">Order</button>
+    </form>
+  
+    <h2>Actual Order</h2>
+    <ul>
+      <li *ngFor="let order of orders">
+        <h3>{{ order.title }}</h3>
+        <!-- <img [src]="order.image" [alt]="order.title" /> -->
+      </li>
+    </ul>
+  </div>
 
+  
+  <!--
 <div>
     <h2>Add a new order</h2>
 <form>
@@ -16,8 +35,8 @@
 <ul>
   <li *ngFor="let order of orders">
     <h3>{{ order.title }}</h3>
-   <!-- <img [src]="order.image" [alt]="order.title" /> -->
+   <img [src]="order.image" [alt]="order.title" /> 
   </li>
 </ul>
 
-</div>
+</div>-->
