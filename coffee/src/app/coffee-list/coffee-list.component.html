@@ -1,0 +1,35 @@
+<h1>Available Coffee Menu</h1>
+<ul>
+  <li *ngFor="let coffee of coffees">
+    <a [routerLink]="['/menu', coffee.id]">
+      <h2>{{ coffee.title }}</h2>
+      <!--<p>{{ coffee.description }}</p> -->
+      <img [src]="coffee.image" [alt]="coffee.title">
+    </a>
+  </li>
+</ul>
+
+<h1>Cafés Locales</h1>
+<ul>
+  <li *ngFor="let coffee of localCoffees">{{ coffee }}</li>
+</ul>
+
+
+
+
+
+<!--
+<h1>Available Coffee Menu</h1>
+<ul>
+    <li *ngFor="let coffee of coffees" (click)="goToDetails(coffee.id)">
+    <h2>{{ coffee.title }}</h2>
+    <p>{{ coffee.description }}</p> 
+    <img [src]="coffee.image" [alt]="coffee.title">
+  </li>
+</ul>
+
+
+<h1>Cafés Locales</h1>
+<ul>
+  <li *ngFor="let coffee of localCoffees">{{ coffee }}</li>
+</ul>-->
