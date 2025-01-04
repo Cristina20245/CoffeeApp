@@ -40,3 +40,19 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Ignorar archivos del sistema
+.DS_Store
+.Trash/
+.localized
+
+# Ignorar carpetas globales
+../*
+!../coffee/  # Asegúrate de que tu carpeta del proyecto no esté ignorada
+
+# Ignorar configuraciones y archivos específicos
+*.log
+*.tmp
+*.swp
+
+
