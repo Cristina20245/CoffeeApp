@@ -6,12 +6,13 @@ import { RouterModule } from '@angular/router'; // Necesario para las rutas
 
 @Component({
   selector: 'app-coffee-list',
-  standalone: true, // Componente standalone
+  standalone: true, // Define este componente como standalone
   templateUrl: './coffee-list.component.html',
   styleUrls: ['./coffee-list.component.css'],
-  imports: [CommonModule, RouterModule], // Para *ngFor, *ngIf y rutas
+  imports: [CommonModule, RouterModule], // Importa módulos necesarios para *ngFor, *ngIf y rutas
 })
 export class CoffeeListComponent implements OnInit {
+  // Lista inicial de cafés con sus detalles
   coffees = [
     { id: 1, title: 'Black Coffee', description: '...', image: '...', ingredients: ['Coffee'] },
     { id: 2, title: 'Latte', description: '...', image: '...', ingredients: ['Espresso', 'Ångad mjölk'] },
@@ -20,45 +21,29 @@ export class CoffeeListComponent implements OnInit {
     { id: 5, title: 'Americano', description: '...', image: '...', ingredients: ['Espresso', 'Hett vatten'] },
     { id: 6, title: 'Espresso', description: '...', image: '...', ingredients: ['Espresso'] }
   ]; // Lista de cafés completos obtenidos desde la API
-  localCoffees: string[] = []; // Arreglo para los cafés locales (títulos de cafés)
+  localCoffees: string[] = []; // Arreglo para los cafés locales (solo títulos)
 
   constructor(private coffeeService: CoffeeService, private router: Router) {}
 
   ngOnInit(): void {
-    // Obtener los cafés desde la API
+    // Obtener los cafés completos desde la API al inicializar el componente
     this.coffeeService.getCoffees().subscribe((data) => {
-      this.coffees = data; // Obtener cafés completos desde la API
+      this.coffees = data; // Asignar los datos obtenidos de la API a la lista de cafés
     });
 
-    // Obtener los cafés locales
-    this.localCoffees = this.coffeeService.getLocalCoffees(); // Obtener cafés locales desde el servicio
+    // Obtener la lista de cafés locales almacenados en localStorage
+    this.localCoffees = this.coffeeService.getLocalCoffees(); // Llamar al servicio para obtener los cafés locales
   }
 
-  // Método para navegar a la página de detalles del café
+  // Método para navegar a la página de detalles de un café específico
   goToDetails(coffeeId: number): void {
-    // Navegar al detalle del café pasando el id
+    // Navega a la ruta de detalles del café pasando el ID correspondiente
     this.router.navigate(['/menu', coffeeId]);
   }
+
+  // Propiedad calculada para filtrar los cafés locales
   get filteredLocalCoffees() {
-    // Filtra los cafés locales eliminando los índices del 0 al 19
+    // Filtra los cafés locales excluyendo los primeros 20 elementos
     return this.localCoffees.filter((_, index) => index > 19);
   }
-  
 }
-
-
-
-
-
-
-/*import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-coffee-list',
-  imports: [],
-  templateUrl: './coffee-list.component.html',
-  styleUrl: './coffee-list.component.css'
-})
-export class CoffeeListComponent {
-
-}*/

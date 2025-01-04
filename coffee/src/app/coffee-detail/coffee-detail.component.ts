@@ -1,55 +1,41 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { CoffeeService } from '../services/coffee.service';
-import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router'; // Para acceder a los parámetros de la ruta
+import { CoffeeService } from '../services/coffee.service'; // Para interactuar con el servicio de cafés
+import { CommonModule } from '@angular/common'; // Módulo común necesario para el componente
 
 @Component({
   selector: 'app-coffee-detail',
-  standalone: true,
+  standalone: true, // Componente independiente
   templateUrl: './coffee-detail.component.html',
   styleUrls: ['./coffee-detail.component.css'],
-  imports: [CommonModule],
+  imports: [CommonModule], // Importa el módulo común
 })
 export class CoffeeDetailComponent implements OnInit {
-  coffee: any = {}; // Almacena los detalles del café
-  coffeeId: number = 0; // ID del café seleccionado
+  coffee: any = {}; // Almacena los detalles del café seleccionado
+  coffeeId: number = 0; // ID del café seleccionado, que se obtiene de la URL
 
   constructor(
-    private route: ActivatedRoute,
-    private coffeeService: CoffeeService
+    private route: ActivatedRoute, // Inyecta ActivatedRoute para obtener parámetros de la URL
+    private coffeeService: CoffeeService // Inyecta el servicio de cafés para interactuar con la API
   ) {}
 
   ngOnInit(): void {
-    // Obtener el ID del café de la URL
+    // Obtener el ID del café desde los parámetros de la URL
     this.coffeeId = +this.route.snapshot.paramMap.get('id')!;
 
-    // Obtener los cafés desde la API usando el servicio
+    // Obtener la lista de cafés desde el servicio (API)
     this.coffeeService.getCoffees().subscribe((coffees) => {
-      // Buscar el café con el ID correspondiente en la lista obtenida
+      // Busca el café correspondiente al ID obtenido
       this.coffee = coffees.find((coffee) => coffee.id === this.coffeeId) || {};
     });
   }
 
-  // Método para añadir el café al pedido
+  // Método para añadir el café actual al pedido
   addToOrder(): void {
-    this.coffeeService.addOrder(this.coffee);
-    alert(`${this.coffee.title} añadido al pedido.`);
+    this.coffeeService.addOrder(this.coffee); // Añadir el café al pedido usando el servicio
+    alert(`${this.coffee.title} añadido al pedido.`); // Mostrar un mensaje de confirmación al usuario
   }
 }
 
 
 
-
-
-
-/*import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-coffee-detail',
-  imports: [],
-  templateUrl: './coffee-detail.component.html',
-  styleUrl: './coffee-detail.component.css'
-})
-export class CoffeeDetailComponent {
-
-}*/
