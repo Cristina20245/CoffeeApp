@@ -23,11 +23,11 @@ export class CoffeeDetailComponent implements OnInit {
     // Obtener el ID del café de la URL
     this.coffeeId = +this.route.snapshot.paramMap.get('id')!;
 
-    // Obtener los cafés desde localStorage
-    const coffees = this.coffeeService.getCoffees();
-
-    // Encontrar el café con el ID correspondiente
-    this.coffee = coffees.find((coffee) => coffee.id === this.coffeeId) || {};
+    // Obtener los cafés desde la API usando el servicio
+    this.coffeeService.getCoffees().subscribe((coffees) => {
+      // Buscar el café con el ID correspondiente en la lista obtenida
+      this.coffee = coffees.find((coffee) => coffee.id === this.coffeeId) || {};
+    });
   }
 
   // Método para añadir el café al pedido

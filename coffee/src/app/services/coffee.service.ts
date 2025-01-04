@@ -6,21 +6,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class CoffeeService {
-  private apiUrl = 'https://api.sampleapis.com/coffee/hot'; // URL de la API (puedes seguir usándola si quieres)
-  
-  private coffees: any[] = []; // Lista de cafés (en memoria)
-  private orders: any[] = []; // Lista de pedidos (en memoria)
-
+  private apiUrl = 'https://api.sampleapis.com/coffee/hot'; // URL de la API
   private localStorageKey = 'localCoffees'; // Clave para almacenar cafés locales en localStorage
+  private orders: any[] = []; // Lista de pedidos (en memoria)
+  private localCoffees: string[] = []; // Lista para almacenar cafés locales (títulos)
 
   constructor(private http: HttpClient) {
     // Cargar los cafés desde localStorage (si existen)
     const savedCoffees = localStorage.getItem(this.localStorageKey);
     if (savedCoffees) {
-      this.coffees = JSON.parse(savedCoffees);
-    } else {
-      // Si no hay cafés en localStorage, cargar desde la API
-      this.loadCoffeesFromApi();
+      this.localCoffees = JSON.parse(savedCoffees); // Cargar cafés locales guardados
     }
 
     // Cargar los pedidos desde localStorage (si existen)
@@ -32,31 +27,29 @@ export class CoffeeService {
 
   // Método para obtener la lista de cafés locales desde localStorage
   getLocalCoffees(): string[] {
-    const coffees = localStorage.getItem(this.localStorageKey);
-    return coffees ? JSON.parse(coffees) : []; // Retorna la lista o un arreglo vacío si no hay datos
+    return this.localCoffees; // Devuelve los cafés locales
   }
 
-  // Método para añadir un café local al localStorage
+  // Método para añadir un café a la lista de cafés locales y guardarlo en localStorage
   addLocalCoffee(coffee: string): void {
-    const currentCoffees = this.getLocalCoffees();
-    currentCoffees.push(coffee);
-    localStorage.setItem(this.localStorageKey, JSON.stringify(currentCoffees)); // Guardamos los cafés actualizados
+    this.localCoffees.push(coffee); // Añade el café a la lista local
+    localStorage.setItem(this.localStorageKey, JSON.stringify(this.localCoffees)); // Guarda en localStorage
   }
 
-  // Obtener los cafés (desde localStorage o API)
-  getCoffees(): any[] {
-    return this.coffees;
+  // Método para obtener los cafés completos desde la API
+  getCoffees(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl); // Retorna los cafés desde la API
   }
 
-  // Obtener un café por ID
-  getCoffeeById(id: number): any {
-    return this.coffees.find((coffee) => coffee.id === id);
+  // Obtener un café por ID de la API
+  getCoffeeById(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${id}`); // Método para obtener un café específico por ID
   }
 
   // Método para añadir un café al pedido
   addToOrder(coffee: any): void {
     this.orders.push(coffee);
-    this.updateLocalStorage('orders', this.orders); // Actualizar pedidos en localStorage
+    this.updateLocalStorage('orders', this.orders); // Actualiza los pedidos en localStorage
   }
 
   // Obtener todos los pedidos
@@ -64,17 +57,9 @@ export class CoffeeService {
     return this.orders;
   }
 
-  // Cargar cafés desde la API y guardarlos en localStorage
-  private loadCoffeesFromApi(): void {
-    this.http.get<any[]>(this.apiUrl).subscribe((data) => {
-      this.coffees = data; // Guardar los cafés obtenidos en memoria
-      this.updateLocalStorage(this.localStorageKey, this.coffees); // Guardar los cafés en localStorage
-    });
-  }
-
   // Método privado para actualizar localStorage
   private updateLocalStorage(key: string, data: any): void {
-    localStorage.setItem(key, JSON.stringify(data)); // Guardar los datos en localStorage
+    localStorage.setItem(key, JSON.stringify(data)); // Guarda los datos en localStorage
   }
 }
 

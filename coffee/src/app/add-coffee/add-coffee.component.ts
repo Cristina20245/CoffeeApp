@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // Nuevo para formularios
 import { CommonModule } from '@angular/common';
+import { CoffeeService } from '../services/coffee.service';
 
 @Component({
   selector: 'app-add-coffee',
@@ -12,12 +13,14 @@ import { CommonModule } from '@angular/common';
 export class AddCoffeeComponent {
   coffeeTitle: string = ''; // Almacena el título del café
   localCoffees: string[] = []; // Lista local de cafés
+  
+  constructor(private coffeeService: CoffeeService) {}
 
+  // Método para añadir café personalizado a la lista local
   addCoffee(): void {
     if (this.coffeeTitle) {
-      // Añadir el café a la lista
-      this.localCoffees = [...this.localCoffees, this.coffeeTitle];
-      this.coffeeTitle = ''; // Limpiar el campo de texto
+      this.coffeeService.addLocalCoffee(this.coffeeTitle); // Añadir al servicio
+      this.coffeeTitle = ''; // Limpiar el campo de entrada
     }
   }
 }

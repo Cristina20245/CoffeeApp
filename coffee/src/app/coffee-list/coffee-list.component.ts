@@ -12,26 +12,43 @@ import { RouterModule } from '@angular/router'; // Necesario para las rutas
   imports: [CommonModule, RouterModule], // Para *ngFor, *ngIf y rutas
 })
 export class CoffeeListComponent implements OnInit {
-  coffees: any[] = []; // Lista de cafés completos obtenidos desde localStorage o API
+  coffees = [
+    { id: 1, title: 'Black Coffee', description: '...', image: '...', ingredients: ['Coffee'] },
+    { id: 2, title: 'Latte', description: '...', image: '...', ingredients: ['Espresso', 'Ångad mjölk'] },
+    { id: 3, title: 'Caramel Latte', description: '...', image: '...', ingredients: ['Espresso', 'Ångad mjölk', 'Karamellsirap'] },
+    { id: 4, title: 'Cappuccino', description: '...', image: '...', ingredients: ['Espresso', 'Ångad mjölk', 'Foam'] },
+    { id: 5, title: 'Americano', description: '...', image: '...', ingredients: ['Espresso', 'Hett vatten'] },
+    { id: 6, title: 'Espresso', description: '...', image: '...', ingredients: ['Espresso'] }
+  ]; // Lista de cafés completos obtenidos desde la API
   localCoffees: string[] = []; // Arreglo para los cafés locales (títulos de cafés)
 
   constructor(private coffeeService: CoffeeService, private router: Router) {}
 
   ngOnInit(): void {
-    // Obtener los cafés completos desde el servicio (y localStorage)
-    this.coffees = this.coffeeService.getCoffees(); // Obtener cafés completos desde localStorage o API
-    
-    // Obtener los cafés locales (solo títulos) desde localStorage
-    this.localCoffees = this.coffeeService.getLocalCoffees(); // Obtener títulos de cafés desde localStorage
+    // Obtener los cafés desde la API
+    this.coffeeService.getCoffees().subscribe((data) => {
+      this.coffees = data; // Obtener cafés completos desde la API
+    });
+
+    // Obtener los cafés locales
+    this.localCoffees = this.coffeeService.getLocalCoffees(); // Obtener cafés locales desde el servicio
   }
 
   // Método para navegar a la página de detalles del café
   goToDetails(coffeeId: number): void {
-    // Redirige a la página de detalles usando la nueva ruta /menu/:id
+    // Navegar al detalle del café pasando el id
     this.router.navigate(['/menu', coffeeId]);
   }
+
+// Método para filtrar los cafés locales que no están en `coffees`
+get filteredLocalCoffees() {
+  // Filtra por nombre y asegura que no exista un café con el mismo nombre en `coffees`
+  return this.localCoffees.filter(localCoffee => 
+    !this.coffees.some(coffee => coffee.title === localCoffee)
+  );
 }
 
+}
 
 
 
