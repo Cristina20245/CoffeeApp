@@ -39,16 +39,14 @@ export class CoffeeListComponent implements OnInit {
     // Navegar al detalle del café pasando el id
     this.router.navigate(['/menu', coffeeId]);
   }
-
-// Método para filtrar los cafés locales que no están en `coffees`
-get filteredLocalCoffees() {
-  // Filtra por nombre y asegura que no exista un café con el mismo nombre en `coffees`
-  return this.localCoffees.filter(localCoffee => 
-    !this.coffees.some(coffee => coffee.title === localCoffee)
-  );
+  get filteredLocalCoffees() {
+    // Filtra los cafés locales eliminando los índices del 0 al 19
+    return this.localCoffees.filter((_, index) => index > 19);
+  }
+  
 }
 
-}
+
 
 
 

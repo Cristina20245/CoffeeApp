@@ -9,10 +9,7 @@
   </li>
 </ul>
 
-<h1>Local Coffees</h1>
-<ul>
-  <li *ngFor="let coffee of localCoffees">{{ coffee }}</li>
+<h1 *ngIf="filteredLocalCoffees.length > 0">Local Coffees</h1>
+<ul *ngIf="filteredLocalCoffees.length > 0">
+  <li *ngFor="let coffee of filteredLocalCoffees">{{ coffee }}</li>
 </ul>
-
-
-
