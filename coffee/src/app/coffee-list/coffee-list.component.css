@@ -4,3 +4,40 @@ img {
     object-fit: cover; /* Hace que la imagen se recorte para llenar el espacio sin deformarse */
   }
   
+  /* Estilos para la lista de cafés */
+ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 900px;
+  }
+  
+  li {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  li img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  li h2 {
+    font-size: 1.2rem;
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+  }
+  
+  h1 {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+    line-height: 1.6;
+  }

@@ -1,27 +1,13 @@
 
 <!--
-<body>
-  <h1>{{ title }}</h1>
-  <h1>Bienvenido a la aplicación de cafés2</h1>
-<app-coffee-list></app-coffee-list>
-  <app-coffee-detail></app-coffee-detail>
-  <app-add-coffee></app-add-coffee> 
-Asegúrate de incluir este componente aquí
-<a routerLink="/add-coffee">Añadir un café</a>
-<a routerLink="/add-coffee">
-  <button>Añadir un café</button>  
-</a> 
-</body>
-<router-outlet />-->
-
 <main>
 
 <div>
 
   <nav>
-    <a routerLink="/menu">Lista de Cafés</a>
+    <a routerLink="/menu">Coffee list</a>
     <br>
-    <a routerLink="/add-coffee">Añadir Café</a>
+    <a routerLink="/add-coffee">Add a personalized coffee</a>
   </nav>
 
 
@@ -29,5 +15,21 @@ Asegúrate de incluir este componente aquí
   <router-outlet></router-outlet>
   
   </div>
-</main>
+</main>-->
+<main>
+
+  <div>
+  
+    <nav>
+      <a routerLink="/menu">Lista de Cafés</a>
+ 
+      <a routerLink="/add-coffee">Añadir Café</a>
+    </nav>
+  
+  
+  
+    <router-outlet></router-outlet>
+    
+    </div>
+  </main>
   
