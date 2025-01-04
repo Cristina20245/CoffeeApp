@@ -43,7 +43,7 @@ div {
     font-family: 'Courier New', Courier, monospace;
   }
   
-  button:hover {
-    background-color: #2980b9;
-  }
-  
+/* Efecto hover para el botón */
+button:hover {
+    background-color: #9f7836;
+}

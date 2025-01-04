@@ -60,7 +60,7 @@ button {
 
 /* Efecto hover para el botón */
 button:hover {
-    background-color: #2980b9;
+    background-color: #9f7836;
 }
 
 /* Centrar todo el contenido de la página (opcional) */
@@ -73,3 +73,10 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #f5f5f5; /* Color de fondo de la página */
 }
+
+p {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+    line-height: 1.6;
+  }
