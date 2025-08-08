@@ -1,0 +1,46 @@
+/* Estilo global */
+* {
+    margin: 0; /* Eliminar márgenes predeterminados */
+    padding: 0; /* Eliminar padding predeterminado */
+    box-sizing: border-box; /* Incluir padding y borde en el cálculo del ancho/alto */
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace; /* Fuente para el cuerpo */
+    background-color: #f5f5f5; /* Color de fondo del cuerpo */
+    color: #333; /* Color del texto */
+    line-height: 1.6; /* Altura de línea para mejorar la legibilidad */
+}
+
+h1, h2, h3 {
+    color: #333; /* Color del texto de los encabezados */
+    font-weight: 600; /* Grosor de la fuente */
+}
+
+a {
+    text-decoration: none; /* Sin subrayado en los enlaces */
+    color: #3498db; /* Color del texto de los enlaces */
+}
+
+a:hover {
+    text-decoration: underline; /* Subrayar los enlaces al pasar el cursor */
+}
+
+/* Barra de navegación */
+nav {
+    background-color: #f1b855; /* Color de fondo de la barra de navegación */
+    padding: 2rem; /* Espaciado interno en la barra de navegación */
+    text-align: center; /* Centrando el texto */
+    font-family: 'Courier New', Courier, monospace; /* Fuente para la barra de navegación */
+}
+
+nav a {
+    margin: 0 15px; /* Espaciado entre los enlaces de navegación */
+    color: white; /* Color de los enlaces en la barra de navegación */
+    font-weight: bold; /* Negrita para los enlaces */
+    font-size: 1.2rem; /* Tamaño de fuente de los enlaces */
+}
+
+nav a:hover {
+    color: #f39c12; /* Color al pasar el cursor sobre los enlaces */
+}

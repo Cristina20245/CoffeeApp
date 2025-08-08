@@ -1,0 +1,49 @@
+/* Contenedor principal del formulario */
+div {
+    background-color: #fff; /* Fondo blanco para el contenedor */
+    padding: 2rem; /* Espaciado interno del contenedor */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor del contenedor */
+    max-width: 500px; /* Máximo ancho del formulario */
+    margin: 20px auto; /* Centrado en la página con márgenes */
+    text-align: center; /* Centrado del texto dentro del contenedor */
+    font-family: 'Courier New', Courier, monospace; /* Estilo de fuente */
+}
+
+/* Título del formulario */
+h2 {
+    font-size: 1.5rem; /* Tamaño de fuente del título */
+    color: #333; /* Color del texto */
+    margin-bottom: 20px; /* Espaciado debajo del título */
+}
+
+/* Estilo para el campo de texto */
+input[type="text"] {
+    width: 100%; /* El campo de texto ocupa todo el ancho disponible */
+    padding: 0.8rem; /* Espaciado interno del campo */
+    margin-bottom: 20px; /* Espaciado debajo del campo */
+    border-radius: 4px; /* Bordes redondeados del campo */
+    border: 1px solid #ddd; /* Borde gris claro */
+    font-size: 1rem; /* Tamaño de la fuente del texto */
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+}
+
+/* Estilo para el botón */
+button {
+    background-color: #f1b855; /* Color de fondo del botón */
+    color: white; /* Color del texto en el botón */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    border: none; /* Sin borde visible */
+    border-radius: 4px; /* Bordes redondeados del botón */
+    font-size: 1.1rem; /* Tamaño de fuente del texto en el botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease; /* Transición suave al cambiar el color de fondo */
+    width: 100%; /* El botón ocupa todo el ancho disponible */
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+    font-family: 'Courier New', Courier, monospace; /* Estilo de fuente */
+}
+
+/* Efecto hover para el botón */
+button:hover {
+    background-color: #9f7836; /* Color de fondo al pasar el cursor sobre el botón */
+}

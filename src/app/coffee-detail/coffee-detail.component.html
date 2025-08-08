@@ -1,0 +1,5 @@
+<h1>{{ coffee.title }}</h1>
+<img [src]="coffee.image" alt="{{ coffee.title }}" style="width: 300px; height: auto;">
+<p>Description: {{ coffee.description }}</p>
+<P>Ingredients: {{ coffee.ingredients }}</P>
+<button (click)="addToOrder()">Add to order</button>

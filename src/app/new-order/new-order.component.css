@@ -1,0 +1,49 @@
+/* Contenedor principal del formulario */
+div {
+    background-color: #fff; /* Color de fondo blanco */
+    padding: 2rem; /* Relleno interior de 2 rem */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera para dar profundidad */
+    max-width: 500px; /* Ancho máximo del contenedor */
+    margin: 20px auto; /* Espaciado superior e inferior de 20px, centrado horizontal */
+    text-align: center; /* Alinear el contenido al centro */
+    font-family: 'Courier New', Courier, monospace; /* Fuente del texto */
+}
+
+/* Título del formulario */
+h2 {
+    font-size: 1.5rem; /* Tamaño de fuente de 1.5 rem */
+    color: #333; /* Color del texto */
+    margin-bottom: 20px; /* Espaciado inferior de 20px */
+}
+
+/* Estilo para el campo de texto */
+input[type="text"] {
+    width: 100%; /* Ancho completo del contenedor padre */
+    padding: 0.8rem; /* Relleno interior de 0.8 rem */
+    margin-bottom: 20px; /* Espaciado inferior de 20px */
+    border-radius: 4px; /* Bordes redondeados */
+    border: 1px solid #ddd; /* Borde gris claro */
+    font-size: 1rem; /* Tamaño de fuente de 1 rem */
+    box-sizing: border-box; /* Incluir relleno y borde en el ancho total */
+}
+
+/* Estilo para el botón */
+button {
+    background-color: #f1b855; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Relleno interior de 10px vertical y 20px horizontal */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 1.1rem; /* Tamaño de fuente de 1.1 rem */
+    cursor: pointer; /* Cambiar el cursor a mano al pasar sobre el botón */
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+    width: 100%; /* Ancho completo del contenedor padre */
+    box-sizing: border-box; /* Incluir relleno y borde en el ancho total */
+    font-family: 'Courier New', Courier, monospace; /* Fuente del texto */
+}
+
+/* Efecto hover para el botón */
+button:hover {
+    background-color: #9f7836; /* Cambio de color de fondo al pasar el ratón */
+}

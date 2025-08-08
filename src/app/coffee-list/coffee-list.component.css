@@ -1,0 +1,49 @@
+/* Estilo para las imágenes */
+img {
+    width: 100px; /* Ajusta el tamaño de la imagen a 100px de ancho, puedes modificarlo según lo necesites */
+    height: auto; /* Mantiene la proporción original de la imagen */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse, recortándola si es necesario */
+}
+
+/* Estilos para la lista de cafés */
+ul {
+    list-style: none; /* Elimina los puntos de lista predeterminados */
+    display: grid; /* Utiliza un diseño en grid para los elementos de la lista */
+    grid-template-columns: repeat(3, 1fr); /* Crea tres columnas con el mismo ancho */
+    gap: 1rem; /* Añade un espacio de 1rem entre los elementos de la lista */
+    padding: 0; /* Elimina el padding por defecto */
+    margin: 20px auto; /* Centra la lista y añade un margen superior e inferior de 20px */
+    max-width: 700px; /* Limita el ancho máximo de la lista a 700px */
+}
+
+/* Estilos para cada ítem de la lista */
+li {
+    background-color: #fff; /* Establece el fondo de cada ítem de la lista en blanco */
+    padding: 1rem; /* Añade un padding de 1rem alrededor del contenido */
+    border-radius: 8px; /* Redondea las esquinas de cada ítem */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Añade una sombra sutil para dar un efecto de profundidad */
+    text-align: center; /* Centra el texto dentro de cada ítem */
+    font-family: 'Courier New', Courier, monospace; /* Aplica una fuente monoespaciada */
+}
+
+/* Estilos específicos para las imágenes dentro de los ítems de la lista */
+li img {
+    width: 100%; /* Hace que las imágenes dentro de los ítems ocupen todo el ancho disponible */
+    border-radius: 8px; /* Redondea las esquinas de las imágenes */
+    margin-bottom: 10px; /* Añade un margen inferior para separar la imagen del texto */
+}
+
+/* Estilos para los títulos dentro de los ítems de la lista */
+li h2 {
+    font-size: 1.2rem; /* Establece un tamaño de fuente de 1.2rem para los títulos */
+    font-family: 'Courier New', Courier, monospace; /* Aplica una fuente monoespaciada */
+    color: #333; /* Establece un color oscuro para el texto */
+}
+
+/* Estilos para el título principal de la página */
+h1 {
+    text-align: center; /* Centra el título principal */
+    font-family: 'Courier New', Courier, monospace; /* Aplica una fuente monoespaciada */
+    color: #333; /* Establece un color oscuro para el texto */
+    line-height: 1.6; /* Establece una altura de línea de 1.6 para mejorar la legibilidad */
+}

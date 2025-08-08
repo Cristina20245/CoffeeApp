@@ -1,0 +1,82 @@
+/* Estilo para el contenedor principal */
+div {
+    background-color: #fff; /* Fondo blanco */
+    padding: 2rem; /* Espaciado interior */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    max-width: 600px; /* Ancho máximo del contenedor */
+    margin: 20px auto;  /* Centrado en la página */
+    text-align: center; /* Centra el texto */
+    display: flex; /* Usamos flexbox para centrar el contenido */
+    flex-direction: column; /* Orden de los elementos: en columna */
+    justify-content: center; /* Centra los elementos en el eje vertical */
+    align-items: center; /* Centra los elementos en el eje horizontal */
+}
+
+/* Estilo para el título principal */
+h1 {
+    font-size: 2rem; /* Tamaño de fuente */
+    font-family: 'Poppins', sans-serif; /* Familia de fuente */
+    font-weight: 600; /* Peso de la fuente */
+    color: #333; /* Color del texto */
+    margin-bottom: 15px; /* Espaciado debajo del título */
+    text-align: center;  /* Asegura que el título esté centrado */
+}
+
+/* Estilo para los párrafos (description, ingredients) */
+p {
+    font-size: 1rem; /* Tamaño de fuente */
+    color: #555; /* Color del texto */
+    line-height: 1.6; /* Altura de línea para mayor legibilidad */
+    margin-bottom: 15px; /* Espaciado debajo de los párrafos */
+    text-align: center;  /* Asegura que los párrafos estén centrados */
+}
+
+/* Estilo para la imagen */
+img {
+    max-width: 100%;   /* Asegura que la imagen no se desborde */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 8px; /* Bordes redondeados en la imagen */
+    margin-bottom: 20px; /* Espaciado debajo de la imagen */
+    display: block;    /* Asegura que la imagen se centre */
+    margin-left: auto; /* Centrado horizontal de la imagen */
+    margin-right: auto; /* Centrado horizontal de la imagen */
+}
+
+/* Estilo para el botón */
+button {
+    background-color: #f1b855; /* Fondo amarillo para el botón */
+    color: white; /* Texto blanco */
+    padding: 12px 20px; /* Espaciado interior del botón */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 1.1rem; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambia el cursor a puntero */
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+    width: 100%;  /* Ancho del 100% del contenedor */
+    box-sizing: border-box; /* Incluye el padding dentro del ancho */
+    margin-top: 20px;  /* Separación del botón de los demás elementos */
+}
+
+/* Efecto hover para el botón */
+button:hover {
+    background-color: #9f7836; /* Cambio de color en hover */
+}
+
+/* Centrar todo el contenido de la página (opcional) */
+body {
+    display: flex; /* Usamos flexbox para centrar el contenido de la página */
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    min-height: 100vh; /* Asegura que el contenido esté centrado en toda la altura de la ventana */
+    margin: 0; /* Elimina los márgenes predeterminados */
+    font-family: 'Poppins', sans-serif; /* Familia de fuente */
+    background-color: #f5f5f5; /* Color de fondo de la página */
+}
+
+p {
+    text-align: center; /* Centra los párrafos */
+    font-family: 'Courier New', Courier, monospace; /* Familia de fuente monoespaciada */
+    color: #333; /* Color del texto */
+    line-height: 1.6; /* Altura de línea para mayor legibilidad */
+}
