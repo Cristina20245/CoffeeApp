@@ -35,6 +35,7 @@ Simple CSS per component
 ---
 
 ## 📁 Project Structure
+```
 coffee/
 ├─ package.json
 ├─ angular.json
@@ -58,6 +59,7 @@ coffee/
 │     │  ├─ add-coffee.component.ts / .html / .css
 │     └─ new-order/
 │        ├─ new-order.component.ts / .html / .css
+```
 
 ---
 
