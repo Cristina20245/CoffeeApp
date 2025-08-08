@@ -25,12 +25,12 @@ ng build
 ---
 
 ## 🧠 Tech Stack
-Angular 19 (Standalone components)
-TypeScript, RxJS
-Angular Router for navigation
-HttpClient for API calls
-Route Guards for restricted pages
-Simple CSS per component
+- Angular 19 (Standalone components)  
+- TypeScript, RxJS  
+- Angular Router for navigation  
+- HttpClient for API calls  
+- Route Guards for restricted pages  
+- Simple CSS per component
 
 ---
 
@@ -64,31 +64,34 @@ coffee/
 ---
 
 ## 🔗 API Source
-The service uses a public API (SampleAPIs – Coffee) for hot coffee data:
+- The service uses a public API (SampleAPIs – Coffee) for hot coffee data:
 // coffee.service.ts (example)
-private readonly API = 'https://api.sampleapis.com/coffee/hot';
+- private readonly API = 'https://api.sampleapis.com/coffee/hot';
 If the API is unavailable, local mock data will be used.
 
 ---
 
 ## 🧭 Routes Overview
 Example routes from app.routes.ts:
-/ → CoffeeListComponent (coffee list)
-/coffee/:id → CoffeeDetailComponent (coffee details)
-/add → AddCoffeeComponent (add new coffee)
-/order/new → NewOrderComponent (create a new order, guard-protected)
+- / → CoffeeListComponent (coffee list)
+- /coffee/:id → CoffeeDetailComponent (coffee details)
+- /add → AddCoffeeComponent (add new coffee)
+- /order/new → NewOrderComponent (create a new order, guard-protected)
 
 ---
 
 ## ✨ Features
-Coffee list with image, title, and ingredients
-Detailed coffee view
-Add new coffee form
-Example route guard for protected pages
-Centralized CoffeeService with HttpClient + RxJS
-Fully standalone components with Angular routing
+- Coffee list with image, title, and ingredients
+- Detailed coffee view
+- Add new coffee form
+- Example route guard for protected pages
+- Centralized CoffeeService with HttpClient + RxJS
+- Fully standalone components with Angular routing
 
-🧪 Useful Commands
+--- 
+
+## 🧪 Useful Commands
+
 # Run app
 ng serve --open
 
@@ -108,14 +111,15 @@ npm run lint
 
 ## 🧹 .gitignore
 The .gitignore is already configured to exclude:
-node_modules
-dist
-.angular/cache
-System files (.DS_Store, Thumbs.db, etc.)
+- node_modules
+- dist
+- .angular/cache
+- System files (.DS_Store, Thumbs.db, etc.)
+  
 If node_modules was accidentally committed:
-git rm -r --cached node_modules
-git commit -m "Remove node_modules from repo"
-git push
+- git rm -r --cached node_modules
+- git commit -m "Remove node_modules from repo"
+- git push
 
 ---
 
