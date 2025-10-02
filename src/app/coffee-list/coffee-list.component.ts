@@ -21,7 +21,7 @@ export class CoffeeListComponent implements OnInit {
     { id: 5, title: 'Americano', description: '...', image: '...', ingredients: ['Espresso', 'Hett vatten'] },
     { id: 6, title: 'Espresso', description: '...', image: '...', ingredients: ['Espresso'] }
   ]; // Lista de cafés completos obtenidos desde la API
-  localCoffees: string[] = []; // Arreglo para los cafés locales (solo títulos)
+  localCoffees: any[] = []; // Arreglo para los cafés locales (solo títulos)
 
   constructor(private coffeeService: CoffeeService, private router: Router) {}
 

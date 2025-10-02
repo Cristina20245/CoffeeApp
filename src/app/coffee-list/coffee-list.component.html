@@ -1,14 +1,17 @@
 <h1>Available Coffee Menu</h1>
 <ul>
-    <li *ngFor="let coffee of coffees">
-        <a [routerLink]="['/menu', coffee.id]">
-            <h2>{{ coffee.title }}</h2>
-            <img [src]="coffee.image" [alt]="coffee.title">
-        </a>
-    </li>
+  <li *ngFor="let coffee of coffees">
+    <a [routerLink]="['/menu', coffee.id]">
+      <h2>{{ coffee.title }}</h2>
+      <img [src]="coffee.image" [alt]="coffee.title" width="150">
+    </a>
+  </li>
 </ul>
 
-<h1 *ngIf="filteredLocalCoffees.length > 0">Local Coffees</h1>
-<ul *ngIf="filteredLocalCoffees.length > 0">
-    <li *ngFor="let coffee of filteredLocalCoffees">{{ coffee }}</li>
+<h1 *ngIf="localCoffees.length > 0">Local Coffees</h1>
+<ul *ngIf="localCoffees.length > 0">
+  <li *ngFor="let coffee of localCoffees">
+    <h2>{{ coffee.title }}</h2>
+    <img [src]="coffee.image" [alt]="coffee.title" width="150">
+  </li>
 </ul>

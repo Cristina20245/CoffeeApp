@@ -109,6 +109,15 @@ npm run lint
 
 ---
 
+# Coffee App ☕
+
+Angular project that shows different coffee types from a public API.  
+You can also add your own coffee to the menu.
+
+🌐 **Live Demo**: [https://coffee-app-cristina.netlify.app](https://coffee-app-cristina.netlify.app)
+
+---
+
 ## 🧹 .gitignore
 The .gitignore is already configured to exclude:
 - node_modules
