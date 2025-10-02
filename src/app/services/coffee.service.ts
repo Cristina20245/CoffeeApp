@@ -36,10 +36,10 @@ export class CoffeeService {
     localStorage.setItem(this.localStorageKey, JSON.stringify(this.localCoffees));
   }
 
-  // ✅ Obtener cafés locales
-  getLocalCoffees(): any[] {
-    return this.localCoffees;
-  }
+// ✅ Obtener cafés locales
+getLocalCoffees(): { title: string; image: string }[] {
+  return this.localCoffees;
+}
 
   // ✅ Obtener cafés de la API (sin forzar imagen por defecto)
   getCoffees(): Observable<any[]> {
